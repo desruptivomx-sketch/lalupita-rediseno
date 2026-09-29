@@ -14,6 +14,15 @@ No es el sitio oficial. Las páginas llevan `noindex` para que Google no las mue
 - Enlaces a marcas del grupo con https y redes sociales iguales en todo el sitio.
 - Enlace a aviso de privacidad (el texto está pendiente del área legal).
 
+## Versión 2: ideas tomadas de otras marcas de botanas
+
+- **Selector "¿Qué se te antoja?"**, inspirado en el medidor de picor de Takis: el visitante elige un antojo y se resaltan las líneas que le van.
+- **Cinta deslizante** con frases de la marca, como las que usan Bandits y otras marcas de texto grande sobre fondo sólido. Se detiene al pasar el cursor y queda fija si el usuario prefiere menos movimiento.
+- **Sello "Hecho en Yucatán"**, retomando cómo Tyrrells y Calbee presumen el origen de sus productos.
+- **"¿No encuentras tu favorito?"**, inspirado en Siete Foods, cuyo sitio se rehízo para ayudar a la gente a encontrar el producto en su tienda. Aquí la consulta llega por WhatsApp.
+- **Preguntas frecuentes** con el tono de la marca, como hacen Ffups y Oatly.
+- **Textos con más personalidad** en la portada.
+
 ## Pendientes antes de publicarlo como sitio oficial
 
 - Subir las imágenes al repositorio. Por ahora se cargan desde `la-lupita.com.mx`.

@@ -252,3 +252,89 @@ input:focus-visible, select:focus-visible { outline: 3px solid var(--corn); outl
 /* Aviso de privacidad */
 .legal-page { padding: 3rem 0 5rem; }
 .legal-page h1 { font-family: var(--display); font-weight: 400; font-size: clamp(2rem, 5vw, 3rem); }
+
+/* ---------- v2: ideas tomadas de otras marcas ---------- */
+
+/* Sello "Hecho en Yucatán" */
+.hero-visual { position: relative; }
+.sticker {
+  position: absolute; z-index: 2; width: clamp(92px, 12vw, 128px); aspect-ratio: 1;
+  top: -34px; left: -28px; transform: rotate(-14deg);
+  filter: drop-shadow(3px 3px 0 var(--ink));
+}
+.sticker svg { width: 100%; height: 100%; overflow: visible; }
+.st-bg { fill: var(--chile); stroke: var(--ink); stroke-width: 3; }
+.st-text { font: 800 11.2px var(--body); letter-spacing: 1.6px; fill: var(--paper); }
+.st-mid { font: 400 15px var(--display); fill: var(--corn); }
+@media (max-width: 800px) { .sticker { top: -26px; left: auto; right: 6px; } }
+
+/* Cinta deslizante */
+.ticker {
+  background: var(--ink); color: var(--corn); overflow: hidden;
+  border-block: 3px solid var(--ink); position: relative; z-index: 2; margin-top: -1px;
+}
+.ticker-track {
+  display: flex; width: max-content; gap: 0;
+  animation: ticker 38s linear infinite;
+}
+.ticker span {
+  font-family: var(--display); font-size: clamp(1.1rem, 2.4vw, 1.6rem);
+  padding: .7rem 1.4rem; white-space: nowrap;
+}
+.ticker span::after { content: "✺"; margin-left: 2.8rem; color: var(--chile); }
+.ticker:hover .ticker-track { animation-play-state: paused; }
+@keyframes ticker { to { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) {
+  .ticker-track { animation: none; flex-wrap: wrap; width: auto; justify-content: center; }
+}
+
+/* ¿Qué se te antoja? */
+.picker {
+  margin-top: 1.8rem; padding: 1.2rem 1.3rem; border: 3px dashed var(--ink); border-radius: 18px;
+  background: var(--corn-pale);
+}
+.picker-q { font-family: var(--display); font-size: 1.35rem; margin: 0 0 .8rem; }
+.picker-opts { display: flex; flex-wrap: wrap; gap: .6rem; }
+.picker-opts button {
+  font: 700 .98rem var(--body); color: var(--ink); cursor: pointer;
+  background: var(--paper); border: 2px solid var(--ink); border-radius: 999px; padding: .55rem 1.1rem;
+}
+.picker-opts button:hover { background: var(--corn); }
+.picker-opts button[aria-pressed="true"] { background: var(--ink); color: var(--corn); }
+.picker-result { margin: .9rem 0 0; font-weight: 700; min-height: 1.6em; }
+.lines.filtering .line:not(.is-match) { opacity: .28; filter: saturate(.4); }
+.line.is-match { transform: translate(-3px, -3px); box-shadow: 6px 6px 0 var(--ink); }
+.line { transition: transform .15s, box-shadow .15s, opacity .2s, filter .2s; }
+
+/* Consulta de dónde comprar */
+.ask {
+  margin: 1.4rem 0; padding: 1.2rem 1.3rem; border-radius: 16px;
+  background: var(--chile-dark); border: 3px solid var(--ink);
+}
+.ask-title { font-family: var(--display); font-size: 1.35rem; margin: 0 0 .2rem; color: var(--corn); }
+.ask-sub { margin: 0 0 .9rem; }
+.ask-form { display: grid; grid-template-columns: 1fr 1fr; gap: .8rem; align-items: end; }
+.ask-form label { margin: 0; font-weight: 700; }
+.ask-form .btn { grid-column: 1 / -1; justify-self: start; }
+@media (max-width: 520px) { .ask-form { grid-template-columns: 1fr; } }
+
+/* Preguntas frecuentes */
+.section-corn { --sec-bg: var(--corn); background: var(--corn); }
+.faq-wrap h2 { max-width: 18ch; }
+.faq { display: grid; gap: .8rem; margin-top: 1.6rem; max-width: 820px; }
+.faq details {
+  background: var(--paper); border: 3px solid var(--ink); border-radius: 16px; padding: 0 1.2rem;
+}
+.faq details[open] { box-shadow: 5px 5px 0 var(--ink); }
+.faq summary {
+  cursor: pointer; list-style: none; font-weight: 800; font-size: 1.08rem;
+  padding: 1rem 2rem 1rem 0; position: relative;
+}
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after {
+  content: "+"; position: absolute; right: 0; top: 50%; transform: translateY(-50%);
+  font-family: var(--display); font-size: 1.5rem; color: var(--chile);
+}
+.faq details[open] summary::after { content: "–"; }
+.faq details p { margin: 0 0 1.1rem; }
+.faq a { color: var(--chile); font-weight: 700; }
